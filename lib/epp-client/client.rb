@@ -140,10 +140,16 @@ module EPP
       command(update, extension)
     end
 
+    def accept_transfer(case_id)
+      accept_transfer = EPP::Commands::AcceptTransfer.new(case_id)
+      command(accept_transfer)
+    end
+
     def poll
       poll = EPP::Commands::Poll.new
       command(poll)
     end
+    
     def ack(msgID)
       ack = EPP::Commands::Poll.new(msgID)
       command(ack)
