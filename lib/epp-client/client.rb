@@ -141,8 +141,13 @@ module EPP
     end
 
     def accept_transfer(case_id)
-      accept_transfer = EPP::Commands::AcceptTransfer.new(case_id)
+      accept_transfer = EPP::Commands::TransferHandshake.new(case_id, handshake: 'accept')
       command(accept_transfer)
+    end
+
+    def reject_transfer(case_id)
+      reject_transfer = EPP::Commands::TransferHandshake.new(case_id, handshake: 'reject')
+      command(reject_transfer)
     end
 
     def poll

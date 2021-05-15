@@ -24,7 +24,7 @@ module EPP
   end
 
   module Commands
-    autoload :AcceptTransfer,    File.expand_path('../epp-client/commands/accept_transfer.rb',    __FILE__)
+    autoload :TransferHandshake,    File.expand_path('../epp-client/commands/transfer_handshake.rb',    __FILE__)
     autoload :Check,    File.expand_path('../epp-client/commands/check.rb',    __FILE__)
     autoload :Create,   File.expand_path('../epp-client/commands/create.rb',   __FILE__)
     autoload :Delete,   File.expand_path('../epp-client/commands/delete.rb',   __FILE__)
