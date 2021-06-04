@@ -48,9 +48,9 @@ module EPP
           node = contact_node('postalInfo')
           node['type'] = 'loc'
 
-          node << contact_node('name', postal_info[:name])
+          node << contact_node('name', postal_info[:name]) if postal_info[:name]
           node << contact_node('org', postal_info[:org]) if postal_info[:org]
-          node << addr_to_xml(postal_info[:addr])
+          node << addr_to_xml(postal_info[:addr]) if postal_info[:addr]
 
           node
         end
